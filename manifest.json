@@ -1,8 +1,8 @@
 {
   "id": "markmap-preview",
   "name": "Markmap Preview",
-  "version": "0.1.0",
-  "minAppVersion": "1.5.0",
+  "version": "0.1.1",
+  "minAppVersion": "1.7.2",
   "description": "Preview the current Markdown note as an interactive Markmap.",
   "author": "Airmour",
   "isDesktopOnly": true

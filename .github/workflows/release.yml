@@ -48,5 +48,6 @@ jobs:
         run: |
           gh release create "$RELEASE_TAG" \
             --title "$RELEASE_TAG" \
+            --generate-notes \
             --draft \
             main.js manifest.json styles.css

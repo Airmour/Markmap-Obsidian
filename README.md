@@ -1,5 +1,9 @@
 # Markmap Preview for Obsidian
 
+Preview your Markdown notes as interactive Markmap mind maps in a separate Obsidian pane. Your notes are not modified.
+
+Open a Markdown note and click the tree icon in its toolbar, or run **Open as Markmap** from the command palette. The preview updates as you edit and supports panning, zooming, and folding nodes. This plugin is available on Obsidian desktop and requires Obsidian 1.7.2 or later.
+
 Obsidian 桌面端插件：将当前 Markdown 笔记预览为可交互的 Markmap 思维导图。预览使用独立视图，不会修改笔记内容。
 
 ## 当前功能
@@ -21,7 +25,7 @@ Obsidian 桌面端插件：将当前 Markdown 笔记预览为可交互的 Markma
 
 建议使用专用测试 Vault，避免开发中的插件影响日常笔记。
 
-1. 将项目放入测试库的 `.obsidian/plugins/obsidian-markmap/` 目录。
+1. 将项目放入测试库的 `.obsidian/plugins/markmap-preview/` 目录。
 2. 在插件目录安装依赖：
 
    ```sh
@@ -56,5 +60,5 @@ npm run build
    git push origin 0.1.0
    ```
 
-3. GitHub Actions 会检查版本、构建插件、生成构建来源证明，并创建包含 `main.js`、`manifest.json` 和 `styles.css` 的 Release 草稿。
+3. GitHub Actions 会检查版本、构建插件、生成构建来源证明，并创建包含自动生成的更新说明和 `main.js`、`manifest.json`、`styles.css` 附件的 Release 草稿。
 4. 在 GitHub 的 Releases 页面检查草稿、填写更新说明，然后手动发布。仓库或组织的 Actions 策略需要允许工作流创建 Release 和生成构建来源证明。

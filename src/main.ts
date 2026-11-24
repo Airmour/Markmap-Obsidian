@@ -48,11 +48,11 @@ class MarkmapPreviewView extends ItemView {
     const toolbar = this.contentEl.createDiv({
       cls: 'markmap-preview__toolbar',
     });
-    toolbar.createEl('span', {
+    toolbar.createSpan({
       cls: 'markmap-preview__title',
       text: 'Markmap Preview',
     });
-    this.statusEl = toolbar.createEl('span', {
+    this.statusEl = toolbar.createSpan({
       cls: 'markmap-preview__status',
       text: 'Open a Markdown note and run “Open as Markmap”.',
     });
@@ -99,8 +99,10 @@ class MarkmapPreviewView extends ItemView {
     if (state.filePath) {
       if (state.filePath !== this.filePath) this.hasFitted = false;
       this.filePath = state.filePath;
-      const file = this.app.vault.getFileByPath(state.filePath);
-      if (file) this.updateMarkdown(await this.app.vault.cachedRead(file));
+      const file = this.app.vault.getAbstractFileByPath(state.filePath);
+      if (file instanceof TFile) {
+        this.updateMarkdown(await this.app.vault.cachedRead(file));
+      }
     }
   }
 
@@ -298,7 +300,7 @@ export default class MarkmapPlugin extends Plugin {
       active: true,
       state: { filePath: file.path } satisfies MarkmapViewState,
     });
-    this.app.workspace.revealLeaf(leaf);
+    await this.app.workspace.revealLeaf(leaf);
 
     if (leaf.view instanceof MarkmapPreviewView) {
       leaf.view.setSource(file.path, markdownView.editor.getValue());
