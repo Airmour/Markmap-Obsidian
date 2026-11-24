@@ -1,0 +1,9 @@
+{
+  "id": "obsidian-markmap",
+  "name": "Markmap Preview",
+  "version": "0.1.0",
+  "minAppVersion": "1.5.0",
+  "description": "Preview the current Markdown note as an interactive Markmap.",
+  "author": "Markmap Obsidian",
+  "isDesktopOnly": true
+}

@@ -1,0 +1,58 @@
+.markmap-preview {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 0;
+}
+
+.markmap-preview__toolbar {
+  align-items: center;
+  border-bottom: 1px solid var(--background-modifier-border);
+  display: flex;
+  gap: var(--size-4-2);
+  min-height: 40px;
+  padding: 0 var(--size-4-3);
+}
+
+.markmap-preview__title {
+  color: var(--text-normal);
+  font-weight: var(--font-semibold);
+}
+
+.markmap-preview__status {
+  color: var(--text-muted);
+  flex: 1;
+  font-size: var(--font-ui-small);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.markmap-preview__button {
+  background-color: var(--interactive-normal);
+  border: 0;
+  border-radius: var(--radius-s);
+  color: var(--text-normal);
+  cursor: pointer;
+  padding: var(--size-2-1) var(--size-4-2);
+}
+
+.markmap-preview__view-action svg,
+.workspace-leaf-content[data-type="markmap-preview"] .view-actions svg.lucide-git-fork,
+.workspace-tab-header .workspace-tab-header-inner-icon svg.lucide-git-fork {
+  transform: rotate(90deg);
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.markmap-preview__canvas {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.markmap-preview__canvas svg {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
