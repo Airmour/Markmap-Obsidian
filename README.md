@@ -45,3 +45,16 @@ npm run build
 ```
 
 `npm run build` 会生成供 Obsidian 加载的 `main.js`。插件目录还需包含 `manifest.json` 和 `styles.css`。
+
+## 发布版本
+
+1. 更新 `manifest.json` 和 `package.json` 中的版本号，并同步更新 `package-lock.json`（例如执行 `npm install --package-lock-only`）。在 `versions.json` 中添加该版本对应的最低 Obsidian 版本。
+2. 提交并推送更改后，创建与 `manifest.json` 中版本号完全一致的标签，不要添加 `v` 前缀，例如：
+
+   ```sh
+   git tag -a 0.1.0 -m "0.1.0"
+   git push origin 0.1.0
+   ```
+
+3. GitHub Actions 会检查版本、构建插件、生成构建来源证明，并创建包含 `main.js`、`manifest.json` 和 `styles.css` 的 Release 草稿。
+4. 在 GitHub 的 Releases 页面检查草稿、填写更新说明，然后手动发布。仓库或组织的 Actions 策略需要允许工作流创建 Release 和生成构建来源证明。
